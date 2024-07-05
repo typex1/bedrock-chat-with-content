@@ -2,7 +2,8 @@ import boto3
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
-from langchain_community.chat_models import BedrockChat
+#from langchain_community.chat_models import BedrockChat
+from langchain_aws import ChatBedrock
 import streamlit as st
 
 
@@ -36,7 +37,8 @@ def bedrock_chain():
         "top_p": 1,
         "stop_sequences": ["\n\nHuman"],
     }
-    model = BedrockChat(
+    #model = BedrockChat(
+    model = ChatBedrock(
         client=bedrock_runtime,
         model_id=model_id,
         model_kwargs=model_kwargs,
