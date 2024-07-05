@@ -22,30 +22,53 @@ def get_video_id_from_url(youtube_url):
 
 def get_transcript(video_id):
     logger.info("Inside get_transcript ..")
-
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
-    except Exception as e:
-        transcript = None
-        logger.info("This video doesn't come with transcript. 💔Sorry can't help here.💔 ", e)
+        # Fetch all available transcripts
+        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        #print("list: {}".format(transcript_list))
 
-    logger.info("transcript")
-    logger.info(transcript)
-    return transcript
+        # Try to get the German transcript
+        transcript = transcript_list.find_transcript(['de'])
+        print("de transcript:{}".format("transcript"))
+
+        # Fetch the actual transcript data
+        transcript_data = transcript.fetch()
+
+        # Extract just the text from each transcript segment
+        transcript_text = [entry['text'] for entry in transcript_data]
+
+        # Join all text segments into a single string
+        full_transcript = ' '.join(transcript_text)
+
+        return full_transcript
+
+    except Exception as e:
+        transcript = transcript_list.find_transcript(['en'])
+        print("en transcript:{}".format("transcript"))
+
+        # Fetch the actual transcript data
+        transcript_data = transcript.fetch()
+
+        # Extract just the text from each transcript segment
+        transcript_text = [entry['text'] for entry in transcript_data]
+
+        # Join all text segments into a single string
+        full_transcript = ' '.join(transcript_text)
+
+        return full_transcript
+
+    except Exception as e:
+        logger.exception(e)
+        return None
 
 def generate_prompt_from_transcript(transcript):
     logger.info("Inside generate_prompt_from_transcript ..")
 
     prompt = "Summarize the following video:\n"
-    for trans in transcript:
-        prompt += " " + trans.get('text', '')
-    
+    #for trans in transcript:
+        #prompt += " " + trans.get('text', '')
+    prompt += " " + transcript
+
     logger.info("prompt")
     logger.info(prompt)
     return prompt
-
-
-
-
-
-
