@@ -1,6 +1,5 @@
 import logging
-
-from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 
 logger = logging.getLogger()
 logger.setLevel("INFO")
