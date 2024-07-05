@@ -19,7 +19,7 @@ This app summarizes YouTube videos and makes them conversational.
 
 1. **Clone the repo**
    ```sh
-   git clone https://github.com/ekhiyami/video-chat.git
+   git clone https://github.com/typex1/bedrock-chat-with-content.git
 
 2. **Move to root directory**
    ```sh
@@ -29,27 +29,22 @@ This app summarizes YouTube videos and makes them conversational.
    ```sh
    pip install -r requirements.txt
 
->The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 8.
+>The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 7.
 
 
-4. **Create .aws folder in the roots**
+4. **Create .streamlit folder in your home directory**
    ```sh
-   mkdir .aws
+   mkdir .streamlit
 
-5. **Move to .aws directory**  
+5. **cd into .streamlit directory**  
    ```sh
    cd .aws
 
-6. **Create credentials.ini file and add AWS credentials in the file**
+6. **Create secrets.toml file and add AWS credentials in the file -  do not forget the quotation marks**
     ```sh
-   ACCESS_KEY=<Your AWS Access Key>
-   SECRET_KEY=<Your AWS Secret Access Key>
+   ACCESS_KEY="<Your AWS Access Key>"
+   SECRET_KEY="<Your AWS Secret Access Key>"
 
-7. **Change lines 23 and 24 in bedrock.py to read the secrets from your local environment**
-   ```sh
-   ACCESS_KEY = os.getenv("ACCESS_KEY")
-   SECRET_KEY = os.getenv("SECRET_KEY")
-
-8. **From root folder, run the following command to run the application in the browser**
+7. **From the repo root folder, run the following command to run the application in the browser**
    ```sh
    streamlit run app.py
