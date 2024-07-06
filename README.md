@@ -12,6 +12,12 @@ This app summarizes YouTube videos and makes them conversational.
 4. Bedrock summarizes the transcript based on the generated prompt and returns the summary to the user.
 5. If users have follow-up questions, the app builds a conversation memory using Langchain and answers follow-up questions based on content from the original transcript.
 
+Updates:
+* Added video transcript support for two further languages, other than **English**, which is **Spanish** and **German**.
+* English example video (20:06 minutes): https://www.youtube.com/watch?v=x2vrg7HuM6g "The Future Of AI, According To Former Google CEO Eric Schmidt"
+* Spanish example video (3:11 minutes): https://www.youtube.com/watch?v=x2vrg7HuM6g "¿Qué es AWS?"
+* German example video (39:49 minutes): https://www.youtube.com/watch?v=rSV2bUp3eAw "TikTok-Experte: “Das machen ALLE bei Lead-Gewinnung falsch!" (Akin Colak Interview)
+
 > Read more about the implementation details in this [blog post](https://community.aws/content/2hPtf0UuIXSLqJk5MKolbOoA7Qv/how-i-built-a-video-chatter-app-with-almost-zero-code).
 
 
