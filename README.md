@@ -29,7 +29,7 @@ Updates:
 
 2. **Move to root directory**
    ```sh
-   cd video-chat
+   cd bedrock-chat-with-content
 
 3. **Install requirements**
    ```sh
