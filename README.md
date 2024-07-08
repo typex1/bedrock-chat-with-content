@@ -14,7 +14,7 @@ This app summarizes YouTube videos and makes them conversational.
 
 Updates:
 * Added video transcript support for two further languages, other than **English**, which is **Spanish** and **German**.
-* English example video (20:06 minutes): https://www.youtube.com/watch?v=x2vrg7HuM6g "The Future Of AI, According To Former Google CEO Eric Schmidt"
+* English example video (20:06 minutes): https://www.youtube.com/watch?v=DgpYiysQjeI "The Future Of AI, According To Former Google CEO Eric Schmidt"
 * Spanish example video (3:11 minutes): https://www.youtube.com/watch?v=x2vrg7HuM6g "¿Qué es AWS?"
 * German example video (39:49 minutes): https://www.youtube.com/watch?v=rSV2bUp3eAw "TikTok-Experte: “Das machen ALLE bei Lead-Gewinnung falsch!" (Akin Colak Interview)
 
