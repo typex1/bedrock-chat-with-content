@@ -38,21 +38,17 @@ Updates:
 >The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 7.
 
 
-4. **Create .streamlit folder in this repository root directory**
+4. **Create .streamlit folder in this repository root directory, and cd into it**
    ```sh
-   mkdir .streamlit
+   mkdir .streamlit && cd .streamlit
 
-5. **cd into .streamlit directory**  
-   ```sh
-   cd .streamlit
-
-6. **Create a "secrets.toml" file and add AWS credentials in the file -  please keep the quotation marks**
+5. **Create a "secrets.toml" file and add AWS credentials in the file -  please keep the quotation marks**
     ```sh
    cat << EoF >> secrets.toml
    ACCESS_KEY="<Your AWS Access Key>"
    SECRET_KEY="<Your AWS Secret Access Key>"
    EoF
 
-7. **From the repository root folder, run the following command to run the application in the browser**
+6. **From the repository root folder, run the following command to run the application in the browser**
    ```sh
    streamlit run app.py
