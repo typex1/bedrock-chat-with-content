@@ -46,10 +46,12 @@ Updates:
    ```sh
    cd .streamlit
 
-6. **Create secrets.toml file and add AWS credentials in the file -  do not forget the quotation marks**
+6. **Create a "secrets.toml" file and add AWS credentials in the file -  please keep the quotation marks**
     ```sh
+   cat << EoF >> secrets.toml
    ACCESS_KEY="<Your AWS Access Key>"
    SECRET_KEY="<Your AWS Secret Access Key>"
+   EoF
 
 7. **From the repository root folder, run the following command to run the application in the browser**
    ```sh
