@@ -16,7 +16,7 @@ Updates:
 * Added video transcript support for two further languages, other than **English**, which is **Spanish** and **German**.
 * English example video (20:06 minutes): https://www.youtube.com/watch?v=DgpYiysQjeI "The Future Of AI, According To Former Google CEO Eric Schmidt"
 * Spanish example video (3:11 minutes): https://www.youtube.com/watch?v=x2vrg7HuM6g "¿Qué es AWS?"
-* German example video (39:49 minutes): https://www.youtube.com/watch?v=rSV2bUp3eAw "TikTok-Experte: “Das machen ALLE bei Lead-Gewinnung falsch!" (Akin Colak Interview)
+* German example video (17:43 minutes): https://www.youtube.com/watch?v=5tYG2L7Lwcc "Die Zettelkasten Methode - kurz erklärt"
 
 > Read more about the implementation details in this [blog post](https://community.aws/content/2hPtf0UuIXSLqJk5MKolbOoA7Qv/how-i-built-a-video-chatter-app-with-almost-zero-code).
 
