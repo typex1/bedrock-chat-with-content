@@ -7,7 +7,9 @@ import streamlit as st
 USER_ICON = "images/user-icon.png"
 AI_ICON = "images/bedrock.png"
 
-
+# browser tab title:
+# spec: https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config
+st.set_page_config(page_title="fsp")
 
 if "user_id" in st.session_state:
     user_id = st.session_state["user_id"]
@@ -21,7 +23,7 @@ if "llm_chain" not in st.session_state:
 
 if "questions" not in st.session_state:
     st.session_state.questions = []
-    input_label = "📺 Enter a Youtube Video URL to Summarize "
+    input_label = "Enter a Youtube Video URL, other content URL or \"S3\"  to Summarize "
     
 else:
     input_label = "❗Ask Me Here If You Need More Details.❗" 
@@ -36,11 +38,10 @@ if "input" not in st.session_state:
 def write_top_bar():
     col1, col2, col3 = st.columns([2, 10, 3])
     with col2:
-        header = "Video Chatter 💬 "
+        header = "Chat with content from Youtube or S3 documents!"
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
         description = """
-        I Summarize and Make Long Youtube Videos Conversational❗
-            
+        Summarize content and then ask further questions!            
        
         """
         st.write(f"<p class=''>{description}", unsafe_allow_html=True)
@@ -66,16 +67,17 @@ def handle_input():
     chain = st.session_state["llm_app"]
 
     question = input
+    content_type = ""
 
     if len(st.session_state.questions)==0:
-        video_id = utility.get_video_id_from_url(input)
+        video_id, content_type = utility.validate_url(input)
 
-        # Get transcript from youtube video
-        transcript = utility.get_transcript(video_id)
-        if not transcript:
-            st.error("The video provided has no English transcript. 💔 Sorry I can't help here.💔")
-            st.session_state.input = ""
-            return None
+        if content_type == "youtube":
+            transcript = utility.get_content(video_id, "youtube")
+            if not transcript:
+                st.error("The video provided has no English, French, Spanish or German transcript. Sorry I can't help here.")
+                st.session_state.input = ""
+                return None
 
 
         # Generate prompt from transcript
@@ -141,7 +143,7 @@ st.markdown(
         }
     </style>
     <div style='position: fixed; bottom: 0; left: 0;'>
-        <p class="small-font">Feedback: @ekhiyami</p>
+        <p class="small-font">Feedback: https://github.com/typex1</p>
         <p class="small-font"> This app doesn't represent my employer</p>
     </div>
     
