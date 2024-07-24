@@ -35,7 +35,7 @@ Updates:
    ```sh
    pip install -r requirements.txt
 
->The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 7.
+>The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 6.
 
 
 4. **Create .streamlit folder in this repository root directory, and cd into it**
