@@ -12,7 +12,8 @@ logger.addHandler(handler)
 content_type = ""
 
 def validate_url(content_url):
-    if "youtube" in content_url:
+    # use "youtu" to capture also "youtu.be" from shared links:
+    if "youtu" in content_url:
         return validate_youtube_url(content_url)
 
 def validate_youtube_url(content_url):
