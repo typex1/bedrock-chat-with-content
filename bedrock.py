@@ -28,10 +28,11 @@ def bedrock_chain():
     
  
     bedrock_runtime = session.client("bedrock-runtime", config=retry_config)
-       
-    model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
+    # bedrock model ids: https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html   
+    # model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
+    model_id = "anthropic.claude-3-5-sonnet-20240620-v1:0"
     model_kwargs =  { 
-        "max_tokens": 2048,  
+        "max_tokens": 4096,  
         "temperature": 0.0,
         "top_k": 250,
         "top_p": 1,
