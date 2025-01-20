@@ -2,9 +2,12 @@
 
 This app summarizes YouTube videos and makes them conversational.
 
+## Important note: Youtube Video download no longer works from cloud provider IP addresses, they have been blocked to prevent mass download.
+As a consequence, either run the streamlit app from a local computer, or use a proxy service for the Youtube download.
+
 ### The Architecture
 
-![Video Chat Architecture](video-chat-arch.png)
+![Video Chat Architecture](Bedrock-Youtube-Chat.png)
 
 1. A user enters a YouTube video URL to summarize.
 2. The Streamlit app takes the URL, parses it to get the video ID, and calls the YouTube API to get the video transcript.
