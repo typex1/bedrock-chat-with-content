@@ -7,7 +7,7 @@ As a consequence, either run the streamlit app from a local computer, or use a p
 
 ### The Architecture
 
-![Video Chat Architecture](Bedrock-Youtube-Chat.png)
+![Video Chat Architecture](images/Bedrock-Youtube-Chat.png)
 
 1. A user enters a YouTube video URL to summarize.
 2. The Streamlit app takes the URL, parses it to get the video ID, and calls the YouTube API to get the video transcript.
