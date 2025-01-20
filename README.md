@@ -30,28 +30,31 @@ Updates:
    ```sh
    git clone https://github.com/typex1/bedrock-chat-with-content.git
 
-2. **Move to root directory**
+2. **If needed, adjust AWS Region in bedrock.py**
+   ```sh
+   region_name = 'us-east-1',
+
+3. **Make sure in that Region, you have model access to Anthropic Claude Sonnet 3.5
+
+4. **Move to root directory**
    ```sh
    cd bedrock-chat-with-content
 
-3. **Install requirements**
+5. **Install requirements**
    ```sh
    pip install -r requirements.txt
 
->The code as is works on Streamlit. If you like to change it to work on your local environment, follow steps 4, 5, and 6. Otherwise, jump directly to step 6.
-
-
-4. **Create .streamlit folder in this repository root directory, and cd into it**
+6. **Create .streamlit folder in this repository root directory, and cd into it**
    ```sh
    mkdir .streamlit && cd .streamlit
 
-5. **Create a "secrets.toml" file and add AWS credentials in the file -  please keep the quotation marks**
+7. **Create a "secrets.toml" file and add AWS credentials in the file -  please keep the quotation marks**
     ```sh
    cat << EoF >> secrets.toml
    ACCESS_KEY="<Your AWS Access Key>"
    SECRET_KEY="<Your AWS Secret Access Key>"
    EoF
 
-6. **From the repository root folder, run the following command to run the application in the browser**
+8. **From the repository root folder, run the following command to run the application in the browser**
    ```sh
    streamlit run app.py
