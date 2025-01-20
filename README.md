@@ -34,7 +34,7 @@ Updates:
    ```sh
    region_name = 'us-east-1',
 
-3. **Make sure in that Region, you have model access to Anthropic Claude Sonnet 3.5
+3. **Make sure in that Region, you have model access to Anthropic Claude Sonnet 3.5**
 
 4. **Move to root directory**
    ```sh
