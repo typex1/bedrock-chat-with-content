@@ -9,7 +9,7 @@ AI_ICON = "images/bedrock.png"
 
 # browser tab title:
 # spec: https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config
-st.set_page_config(page_title="fsp")
+st.set_page_config(page_title="Chat")
 
 if "user_id" in st.session_state:
     user_id = st.session_state["user_id"]
