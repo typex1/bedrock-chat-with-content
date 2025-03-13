@@ -3,13 +3,12 @@ import bedrock
 import utility
 import streamlit as st
 
-
 USER_ICON = "images/user-icon.png"
 AI_ICON = "images/bedrock.png"
 
 # browser tab title:
 # spec: https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config
-st.set_page_config(page_title="Chat")
+st.set_page_config(page_title="yt bedrock chat")
 
 if "user_id" in st.session_state:
     user_id = st.session_state["user_id"]
@@ -23,8 +22,7 @@ if "llm_chain" not in st.session_state:
 
 if "questions" not in st.session_state:
     st.session_state.questions = []
-    #input_label = "Enter a Youtube Video URL, other content URL or \"S3\"  to Summarize "
-    input_label = "Enter a Youtube Video URL to summarize "
+    input_label = "Enter a Youtube Video URL, other content URL or \"S3\"  to Summarize "
     
 else:
     input_label = "❗Ask Me Here If You Need More Details.❗" 
@@ -39,8 +37,7 @@ if "input" not in st.session_state:
 def write_top_bar():
     col1, col2, col3 = st.columns([2, 10, 3])
     with col2:
-        #header = "Chat with content from Youtube or S3 documents!"
-        header = "Chat with content Youtube!"
+        header = "Chat with content from Youtube or S3 documents!"
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
         description = """
         Summarize content and then ask further questions!            
@@ -123,13 +120,10 @@ def write_chat_message(md):
         render_answer(md["answer"])
 
 
-
-
 with st.container():
     for q, a in zip(st.session_state.questions, st.session_state.answers):
         write_user_message(q)
         write_chat_message(a)
-
 
 st.markdown("---")
 
