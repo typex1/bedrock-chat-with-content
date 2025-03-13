@@ -6,8 +6,6 @@ from langchain.memory import ConversationBufferMemory
 from langchain_aws import ChatBedrock
 import streamlit as st
 
-
-
 from botocore.config import Config
 retry_config = Config(
         region_name = 'us-east-1',
@@ -16,7 +14,6 @@ retry_config = Config(
             'mode': 'standard'
         }
 )
-
 
 def bedrock_chain():
     ACCESS_KEY = st.secrets["ACCESS_KEY"]
