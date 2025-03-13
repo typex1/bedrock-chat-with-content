@@ -3,11 +3,13 @@ from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, No
 import sys
 
 logger = logging.getLogger()
-logger.setLevel("INFO")
+#logger.setLevel("INFO")
+logger.setLevel("WARNING")
 handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
+DEBUG = False
 
 content_type = ""
 
@@ -118,6 +120,7 @@ def generate_prompt_from_transcript(transcript):
         #prompt += " " + trans.get('text', '')
     prompt += " " + transcript
 
-    logger.info("prompt")
-    logger.info(prompt)
+    if DEBUG:
+        logger.info("prompt")
+        logger.info(prompt)
     return prompt
