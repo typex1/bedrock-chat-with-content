@@ -40,10 +40,11 @@ def get_content(id, content_type):
 def get_youtube_transcript(video_id):
     try:
         transcript = YouTubeTranscriptApi.list_transcripts(video_id)
-
+        #print("transcript:{}".format(transcript))
         # Check for German transcript
         try:
             transcript_data=transcript.find_transcript(['de']).fetch()
+            transcript_data=transcript_data.to_raw_data() # see https://pypi.org/project/youtube-transcript-api/ v.1.0.1
             # Extract just the text from each transcript segment
             transcript_text = [entry['text'] for entry in transcript_data]
             # Join all text segments into a single string
@@ -51,10 +52,10 @@ def get_youtube_transcript(video_id):
             return full_transcript
         except NoTranscriptFound:
             pass
-
         # Check for French transcript
         try:
             transcript_data=transcript.find_transcript(['fr']).fetch()
+            transcript_data=transcript_data.to_raw_data() # see https://pypi.org/project/youtube-transcript-api/ v.1.0.1
             # Extract just the text from each transcript segment
             transcript_text = [entry['text'] for entry in transcript_data]
             # Join all text segments into a single string
@@ -62,10 +63,10 @@ def get_youtube_transcript(video_id):
             return full_transcript
         except NoTranscriptFound:
             pass
-        
         # Check for English transcript
         try:
             transcript_data=transcript.find_transcript(['en']).fetch()
+            transcript_data=transcript_data.to_raw_data() # see https://pypi.org/project/youtube-transcript-api/ v.1.0.1
             # Extract just the text from each transcript segment
             transcript_text = [entry['text'] for entry in transcript_data]
             # Join all text segments into a single string
@@ -73,10 +74,10 @@ def get_youtube_transcript(video_id):
             return full_transcript
         except NoTranscriptFound:
             pass
-
         # Check for Spanish transcript
         try:
             transcript_data=transcript.find_transcript(['es']).fetch()
+            transcript_data=transcript_data.to_raw_data() # see https://pypi.org/project/youtube-transcript-api/ v.1.0.1
             # Extract just the text from each transcript segment
             transcript_text = [entry['text'] for entry in transcript_data]
             # Join all text segments into a single string
