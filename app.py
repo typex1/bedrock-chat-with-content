@@ -3,6 +3,7 @@ import bedrock
 import utility
 import streamlit as st
 
+
 USER_ICON = "images/user-icon.png"
 AI_ICON = "images/bedrock.png"
 
@@ -41,7 +42,7 @@ def write_top_bar():
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
         description = """
         Summarize content and then ask further questions!            
-       
+        example video: https://www.youtube.com/watch?v=-zF1mkBpyf4
         """
         st.write(f"<p class=''>{description}", unsafe_allow_html=True)
     with col3:
@@ -101,7 +102,7 @@ def write_user_message(md):
     col1, col2 = st.columns([1, 12])
 
     with col1:
-        st.image(USER_ICON, use_column_width="always")
+        st.image(USER_ICON, use_container_width="always")
     with col2:
         st.warning(md["question"])
 
@@ -109,7 +110,7 @@ def write_user_message(md):
 def render_answer(answer):
     col1, col2 = st.columns([1, 12])
     with col1:
-        st.image(AI_ICON, use_column_width="always")
+        st.image(AI_ICON, use_container_width="always")
     with col2:
         st.info(answer["response"])
 
@@ -120,10 +121,13 @@ def write_chat_message(md):
         render_answer(md["answer"])
 
 
+
+
 with st.container():
     for q, a in zip(st.session_state.questions, st.session_state.answers):
         write_user_message(q)
         write_chat_message(a)
+
 
 st.markdown("---")
 

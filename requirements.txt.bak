@@ -1,0 +1,6 @@
+streamlit 
+boto3
+langchain
+youtube-transcript-api==1.0.1
+langchain-aws
+requests

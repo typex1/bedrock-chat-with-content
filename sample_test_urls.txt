@@ -1,0 +1,22 @@
+# Sample YouTube URLs for testing transcript downloads
+# Lines starting with # are comments and will be ignored
+
+# Example video from README (English)
+https://www.youtube.com/watch?v=-zF1mkBpyf4
+
+# AI/Tech videos (English)
+https://www.youtube.com/watch?v=DgpYiysQjeI
+
+# Spanish video from README
+https://www.youtube.com/watch?v=x2vrg7HuM6g
+
+# German video from README  
+https://www.youtube.com/watch?v=5tYG2L7Lwcc
+
+# Short format URL (youtu.be)
+https://youtu.be/dQw4w9WgXcQ
+
+# Educational content (usually has good transcripts)
+https://www.youtube.com/watch?v=aircAruvnKk
+
+# Add more URLs here for testing...
